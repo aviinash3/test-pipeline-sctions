@@ -37,3 +37,21 @@ on:
         - name: "sub-ulri-corp-prod-01"
           vnet_name: "Spk-ULRI-Corp-Prod-EUS2-VNET"
           vnet_resourcegroup: "eus2-prod-rg"
+
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    name: Deploy Azure Resource
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Parse Selected Subscription ID
+        id: parse-subscription
+        run: |
+         echo "helo"
